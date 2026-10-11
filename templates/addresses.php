@@ -4,7 +4,7 @@
     <input type="hidden" name="id" value="<?= $form['id'] ?>">
     <div class="mb-3">
         <label class="form-label">CEP</label>
-        <input class="form-control" oninput="fillAddress(this.value)">
+        <input class="form-control" oninput="maskCep(this); fillAddress(this.value)">
     </div>
     <div class="mb-3">
         <label class="form-label">Endereço</label>
@@ -25,6 +25,10 @@
 </table>
 
 <script>
+    function maskCep(input) {
+        input.value = input.value.replace(/\D/g, '').slice(0, 8).replace(/(\d{5})(\d)/, '$1-$2');
+    }
+
     async function fillAddress(cep) {
         const digits = cep.replace(/\D/g, '');
         if (digits.length !== 8) return;
