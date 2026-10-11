@@ -12,6 +12,10 @@ Sistema web simples para gerenciar fretes, feito em PHP para a disciplina Fundam
 
 PHP 8.2, MariaDB (XAMPP), Bootstrap 5 e JavaScript.
 
+## Banco de dados
+
+O XAMPP vem com o MariaDB, que é compatível com o MySQL. Por isso a conexão em `config/database.php` usa o driver `mysql` do PDO: o PHP não tem um driver próprio para o MariaDB, e o MariaDB funciona com o driver do MySQL. O mesmo código funciona nos dois bancos.
+
 ## Como executar
 
 1. Inicie o Apache e o MySQL no XAMPP.
