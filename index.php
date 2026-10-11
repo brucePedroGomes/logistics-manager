@@ -65,6 +65,12 @@ require 'includes/header.php';
     <button class="btn btn-primary">Gerar frete</button>
 </form>
 
+<h2 class="mt-5">Relatório</h2>
+<form action="report.php" class="d-flex gap-2">
+    <input type="date" name="date" class="form-control w-auto" required>
+    <button class="btn btn-success">Baixar relatório</button>
+</form>
+
 <script>
     function addProduct() {
         const products = document.getElementById('products');
