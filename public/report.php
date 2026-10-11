@@ -1,5 +1,5 @@
 <?php
-require 'includes/database.php';
+require '../config/database.php';
 
 $statement = $database->prepare(
     'SELECT freights.id,

@@ -11,7 +11,7 @@
     <div class="container">
         <span class="navbar-brand">Gerenciador Logístico</span>
         <div class="navbar-nav">
-            <a class="nav-link" href="index.php">Fretes</a>
+            <a class="nav-link" href="freights.php">Fretes</a>
             <a class="nav-link" href="products.php">Produtos</a>
             <a class="nav-link" href="addresses.php">Endereços</a>
             <a class="nav-link" href="carriers.php">Transportadores</a>

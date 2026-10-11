@@ -1,5 +1,5 @@
 <?php
-require 'includes/database.php';
+require '../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['id']) {
@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 
 $carriers = $database->query('SELECT * FROM carriers ORDER BY name')->fetchAll();
 
-require 'includes/header.php';
+require '../templates/header.php';
 ?>
 <h1>Transportadores</h1>
 

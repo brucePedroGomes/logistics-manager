@@ -1,5 +1,5 @@
 <?php
-require 'includes/database.php';
+require '../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $database->prepare('INSERT INTO freights (carrier_id, origin_id, destination_id) VALUES (?, ?, ?)')
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($_POST['product_ids'] as $productId) {
         $addProduct->execute([$freightId, $productId]);
     }
-    header('Location: index.php?saved=1');
+    header('Location: freights.php?saved=1');
     exit;
 }
 
@@ -18,7 +18,7 @@ $carriers = $database->query('SELECT * FROM carriers ORDER BY name')->fetchAll()
 $addresses = $database->query('SELECT * FROM addresses ORDER BY address')->fetchAll();
 $products = $database->query('SELECT * FROM products ORDER BY name')->fetchAll();
 
-require 'includes/header.php';
+require '../templates/header.php';
 ?>
 <h1>Fretes</h1>
 
