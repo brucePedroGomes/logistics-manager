@@ -5,6 +5,7 @@ Sistema web simples para gerenciar fretes, feito em PHP para a disciplina Fundam
 ## Funcionalidades
 
 - Cadastro e edição de produtos, endereços e transportadores
+- Endereço preenchido pelo CEP, usando a API [ViaCEP](https://viacep.com.br/)
 - Geração de frete: um transportador, uma origem, um destino e vários produtos (o botão "+ Adicionar produto" cria os campos com JavaScript)
 - Download do relatório (CSV) dos fretes de um dia
 
