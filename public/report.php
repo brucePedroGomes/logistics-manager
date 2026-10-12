@@ -1,6 +1,8 @@
 <?php
 require '../config/database.php';
 
+$date = $_GET['date'] ?? date('Y-m-d');
+
 $statement = $database->prepare(
     'SELECT freights.id,
             carriers.name AS carrier,
@@ -16,10 +18,10 @@ $statement = $database->prepare(
      WHERE DATE(freights.created_at) = ?
      GROUP BY freights.id'
 );
-$statement->execute([$_GET['date']]);
+$statement->execute([$date]);
 
 header('Content-Type: text/csv; charset=utf-8');
-header('Content-Disposition: attachment; filename="relatorio-fretes-' . $_GET['date'] . '.csv"');
+header('Content-Disposition: attachment; filename="relatorio-fretes-' . $date . '.csv"');
 
 $csv = fopen('php://output', 'w');
 $utf8Bom = "\u{FEFF}";
