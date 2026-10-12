@@ -3,9 +3,12 @@ require '../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['id']) {
-        $database->prepare('UPDATE products SET name = ? WHERE id = ?')->execute([$_POST['name'], $_POST['id']]);
+        $database->prepare('UPDATE products SET name = ? WHERE id = ?')->execute([$_POST['names'][0], $_POST['id']]);
     } else {
-        $database->prepare('INSERT INTO products (name) VALUES (?)')->execute([$_POST['name']]);
+        $addProduct = $database->prepare('INSERT INTO products (name) VALUES (?)');
+        foreach ($_POST['names'] as $name) {
+            $addProduct->execute([$name]);
+        }
     }
     header('Location: products.php');
     exit;
