@@ -21,7 +21,7 @@ O XAMPP vem com o MariaDB, que é compatível com o MySQL. Por isso a conexão e
 
 1. Inicie o Apache e o MySQL no XAMPP.
 2. Importe o arquivo `database/schema.sql` no phpMyAdmin.
-3. Copie esta pasta para `htdocs` e abra `http://localhost/logistics-manager/public/`.
+3. Copie esta pasta para `htdocs` com o nome `logistics-manager` e abra `http://localhost/logistics-manager/public/`.
 
 ## Estrutura
 
