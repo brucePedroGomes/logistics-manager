@@ -15,7 +15,7 @@ $form = ['id' => '', 'name' => ''];
 if (isset($_GET['id'])) {
     $statement = $database->prepare('SELECT * FROM carriers WHERE id = ?');
     $statement->execute([$_GET['id']]);
-    $form = $statement->fetch();
+    $form = $statement->fetch() ?: $form;
 }
 
 $carriers = $database->query('SELECT * FROM carriers ORDER BY name')->fetchAll();

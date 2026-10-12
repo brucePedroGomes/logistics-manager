@@ -15,7 +15,7 @@ $form = ['id' => '', 'address' => ''];
 if (isset($_GET['id'])) {
     $statement = $database->prepare('SELECT * FROM addresses WHERE id = ?');
     $statement->execute([$_GET['id']]);
-    $form = $statement->fetch();
+    $form = $statement->fetch() ?: $form;
 }
 
 $addresses = $database->query('SELECT * FROM addresses ORDER BY address')->fetchAll();

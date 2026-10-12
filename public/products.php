@@ -15,7 +15,7 @@ $form = ['id' => '', 'name' => ''];
 if (isset($_GET['id'])) {
     $statement = $database->prepare('SELECT * FROM products WHERE id = ?');
     $statement->execute([$_GET['id']]);
-    $form = $statement->fetch();
+    $form = $statement->fetch() ?: $form;
 }
 
 $products = $database->query('SELECT * FROM products ORDER BY name')->fetchAll();
